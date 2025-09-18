@@ -4,5 +4,6 @@ public class Operatorc {
         int num1=80;
         System.out.println(num+num1);
         System.out.println(num1);
+        System.out.println(num);
     }
 }
