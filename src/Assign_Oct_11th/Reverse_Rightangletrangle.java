@@ -6,6 +6,7 @@ public class Reverse_Rightangletrangle {
     public static void main(String[] args) {
 
 
+
         Scanner scn = new Scanner(System.in);
         System.out.println("enter number");
         int n=scn.nextInt();
@@ -16,7 +17,7 @@ public class Reverse_Rightangletrangle {
             }
             System.out.println(" ");
         }
-
+        
     }
 }
 
