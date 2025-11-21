@@ -1,0 +1,76 @@
+{
+  "api_name": "Restful Booker",
+  "base_url": "https://restful-booker.herokuapp.com",
+  "description": "A simple API to practice CRUD operations for booking workflow.",
+  "requirements": {
+    "authentication": {
+      "endpoint": "/auth",
+      "method": "POST",
+      "purpose": "Generate an authentication token.",
+      "request_fields": {
+        "username": "string",
+        "password": "string"
+      },
+      "response": {
+        "token": "string"
+      }
+    },
+    "booking": {
+      "create_booking": {
+        "endpoint": "/booking",
+        "method": "POST",
+        "purpose": "Create a new booking.",
+        "request_fields": {
+          "firstname": "string",
+          "lastname": "string",
+          "totalprice": "number",
+          "depositpaid": "boolean",
+          "bookingdates": {
+            "checkin": "string",
+            "checkout": "string"
+          },
+          "additionalneeds": "string"
+        }
+      },
+      "get_all_bookings": {
+        "endpoint": "/booking",
+        "method": "GET",
+        "purpose": "Retrieve all booking IDs.",
+        "query_filters": [
+          "firstname",
+          "lastname",
+          "checkin",
+          "checkout"
+        ]
+      },
+      "get_booking_by_id": {
+        "endpoint": "/booking/{id}",
+        "method": "GET",
+        "purpose": "Retrieve booking details by booking ID."
+      },
+      "update_booking": {
+        "endpoint": "/booking/{id}",
+        "method": "PUT",
+        "purpose": "Update full booking details.",
+        "authorization": "Requires auth token in cookie header."
+      },
+      "partial_update_booking": {
+        "endpoint": "/booking/{id}",
+        "method": "PATCH",
+        "purpose": "Update specific fields in the booking.",
+        "authorization": "Requires auth token."
+      },
+      "delete_booking": {
+        "endpoint": "/booking/{id}",
+        "method": "DELETE",
+        "purpose": "Delete a booking.",
+        "authorization": "Requires auth token."
+      }
+    },
+    "ping": {
+      "endpoint": "/ping",
+      "method": "GET",
+      "purpose": "Health check endpoint."
+    }
+  }
+}
